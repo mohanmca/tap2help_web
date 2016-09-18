@@ -1,16 +1,22 @@
 {
- "name": "tap2help_web",
- "version": "1.0.0",
- "scripts": {
-   "start": "concurrently \"npm run tsc:w\"",
-   "tsc:w": "tsc -w",
-   "tsc": "tsc"
- },
- "dependencies": {
-   "backendless": ">=3.1.0"
- },
- "devDependencies": {
-   "concurrently": "^2.0.0",
-   "typescript": ">=2.0.2"
- }
+    "name": "tap2help_web",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "concurrently \"npm run tsc:w\"",
+        "tsc:w": "tsc -w",
+        "tsc": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mohanmca/tap2web.git"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "backendless": ">=3.1.0",
+        "lodash": ">=4.15.0"
+    },
+    "devDependencies": {
+        "concurrently": "^2.0.0",
+        "typescript": ">=2.0.2"
+    }
 }
