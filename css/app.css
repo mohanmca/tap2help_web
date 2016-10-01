@@ -1,0 +1,33 @@
+section {
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+}
+div#one {
+    width: 15%;
+    height: 200px;
+    background: red;
+    float: left;
+}
+div#two {
+    margin-left: 15%;
+    height: 200px;
+    background: black;
+}
+#sendNow {
+  float:left;
+  width:200px;
+  background:#000;
+  clear:both;
+}
+
+.btnImg {
+  width: 22;
+  height: 100% !important;
+  position: relative !important;
+  max-width: 25;
+  position: relative;
+  vertical-align: middle;
+  border: 0;
+}

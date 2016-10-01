@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login And Register - September 24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/userLogin.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="//api.backendless.com/sdk/js/latest/backendless.min.js"></script>
+    <script type="text/javascript" src="js/application_bundle.js"></script>
+</head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div id="register"><a class="brand" href="#myCarousel" data-slide-to="0">Register</a></div>
+                    <div id="login"><a class="brand" href="#myCarousel" data-slide-to="1">Login</a></div>
+                    <div id="logout"><a class="brand" href="#myCarousel" data-slide-to="1" onclick="application.logout();">Logout</a></div>
+                    <div id="reports"><a class="brand" href="#myCarousel" accesskey="" data-slide-to="2" onclick="application.viewService.showReports();return false">Reports</a></div>
+                    <div id="management"><a class="brand" href="#myCarousel" accesskey="" data-slide-to="3" onclick="application.viewService.showManagement();return false">Management</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myCarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+                <div class="item active" style="background-color: #FAFAFA">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <form class="form-signin" name="register" id="regForm">
+                                    <div id="regFields"></div>
+                                    <div><input type="text" class="input-block-level" placeholder="Name" name="name"></div>
+                                    <div><input type="text" class="input-block-level" placeholder="Identity (email address)" name="email"></div>
+                                    <div><input type="password" class="input-block-level" placeholder="Password" name="password"></div>
+                                    <div><input class="btn btn-large btn-primary" type="button" onclick="application.userService.createUser(this.form); return false;" value="Register" /></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-color: #EEEDF7;">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <form class="form-signin">
+                                    <div><input type="text" class="input-block-level" placeholder="Identity (email address)" name="userid"></div>
+                                    <div><input type="password" class="input-block-level" placeholder="Password" name="pswrd"></div>
+                                    <button class="btn btn-large btn-primary" type="button" onclick="application.loginUser(this.form);return false;">Sign in</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id="reportsDiv" style="background-color: #EDEDF0;">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <div id="rptContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item container" id="managementDiv" style="background-color: #EDEDF0;">
+                    <div class="carousel-caption">
+                        <div id="managementContent"></div>
+                    </div>
+                </div>
+
+
+                <div class="item" style="background-color: #EDEDF0;">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="container">
+                                <h2 class="lead" id="message">Test Message</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.carousel -->
+
+        </div>
+    </div>
+
+    <script>
+        $('document').ready(function() {
+            application.viewService.showPrivilegedMenu();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<div id="mgmt" class="container">
+    <form name="mgmtForm" id="mgmtForm">
+        <div id="container" style="display:block;border:10px">
+            <div class="row">
+                <div class="col-md-3">Select disaster</div>
+                <div class="col-md-3" id="showMgmtDisasters"></div>
+                <div class="col-md-3">Select type of need</div>
+                <div class="col-md-3">
+                    <select id="item" onChange="application.managementService.showAttributes(this);">
+               <option value="2">Shelter</option>
+               <option value="1">Assesment</option>
+             </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="shelterTemplateAttribute" style="display:none">
+                    <select>
+                  <option value="3">Others</option>
+                  <option value="2">Available Capacity</option>
+                  <option value="1">Hotlines</option>
+                </select>
+                    <div id="templateAttributeText" style="display:none">
+                        <input type=text>
+                        </text>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="attributes" class="container">
+            <div id="anAttribute" style="display:none" class="row">
+                <div id="assesmentTemplateAttribute " class="col-md-5">
+                    <select id="needs">
+                              <option value="6">Number of Hospitals</option>
+                              <option value="5">Hotlines</option>
+                              <option value="4">Number of Evacuation Centers</option>
+                              <option value="3">Number of Host Families</option>
+                              <option value="2">Number of Hygiene Kits</option>
+                              <option value="1">Number of Shelter Kits</option>
+                            </select>
+                </div>
+                <div id="text" class="col-md-5">
+                    <input id="needValue" type=text/>
+                </div>
+                <div id="text" class="col-md-2">
+                    <button onclick="application.managementService.addAttribute(this);return false;"><img class="btnImg" src="./images/add-button.png"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="sendNow">
+                <button onclick="application.managementService.saveAssesment();"><img class="btnImg" src="./images/send-now.gif"></button>
+            </div>
+        </div>
+    </form>
+</div>
